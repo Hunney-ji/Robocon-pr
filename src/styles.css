@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-repeat:no-repeat;
+    background-size: cover;
+    background: linear-gradient(rgba(0,0,0,0.3));
+    background-attachment:fixed ;
+
+}
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  video {
+    max-width: 100%;
+    border: 2px solid #fff;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .videos{
+    display: flex;
+    flex-wrap:wrap;
+    width: 30%;
+  }
+  
