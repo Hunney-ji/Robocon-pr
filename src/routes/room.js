@@ -8,7 +8,7 @@ import './web.css';
 // Environment fix for simple-peer
 window.process = {
     env: {
-        NODE_ENV: 'development'
+        NODE_ENV: 'production'
     },
     nextTick: function (callback) {
         setTimeout(callback, 0);
