@@ -99,11 +99,11 @@ const Room = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [currentVideoRef, setCurrentVideoRef] = useState(null);
 
-    useEffect(() => {
+    useEffect(async () => {
         // Get existing socket ID from sessionStorage, if available
         const existingSocketID = sessionStorage.getItem("socketID");
 
-        socketRef.current = io("https://robo-war-3f7f.vercel.app", {
+        socketRef.current =await io("https://robo-war-3f7f.vercel.app", {
             reconnection: true,
             reconnectionAttempts: 10,
             reconnectionDelay: 1000,
