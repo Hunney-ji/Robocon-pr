@@ -104,7 +104,7 @@ const Room = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get("http://localhost:8000");
+            const response = await axios.get("https://robo-war-3f7f.vercel.app");
             setData(response.data);
             console.log(response.data)
           } catch (error) {
