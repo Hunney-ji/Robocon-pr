@@ -108,11 +108,7 @@ const Room = () => {
             setData(response.data);
             console.log(response.data)
           } catch (error) {
-            if (error.response && error.response.status === 404) {
-              setError('Resource not found');
-            } else {
-              setError('An error occurred');
-            }
+            console.log("error aayA");
           }
         };
     
