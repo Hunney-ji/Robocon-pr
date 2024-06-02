@@ -123,15 +123,16 @@ const Room = () => {
         };
       }, []);
 
-    useEffect(async () => {
+    useEffect( () => {
         // Get existing socket ID from sessionStorage, if available
-        const existingSocketID = sessionStorage.getItem("socketID");
+        // const existingSocketID = sessionStorage.getItem("socketID");
 
         socketRef.current = io("https://robo-war-3f7f.vercel.app");
 
         // Store the socket ID in sessionStorage when the connection is established
         socketRef.current.on("connect", () => {
-            sessionStorage.setItem("socketID", socketRef.current.id);
+            // sessionStorage.setItem("socketID", socketRef.current.id);
+            console.log("vom");
         }); 
 
         const getDevicesAndStreams = async () => {
