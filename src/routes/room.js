@@ -4,6 +4,7 @@ import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
 import './web.css';
+import axios from 'axios';
 
 // Environment fix for simple-peer
 window.process = {
@@ -98,6 +99,29 @@ const Room = () => {
     const { roomID } = useParams();
     const [modalOpen, setModalOpen] = useState(false);
     const [currentVideoRef, setCurrentVideoRef] = useState(null);
+    const [data,setData]=useState();
+    const [err,setError]=useState();
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get("http://localhost:8000");
+            setData(response.data);
+            console.log(response.data)
+          } catch (error) {
+            if (error.response && error.response.status === 404) {
+              setError('Resource not found');
+            } else {
+              setError('An error occurred');
+            }
+          }
+        };
+    
+        fetchData();
+    
+        return () => {
+          // Cleanup function if needed
+        };
+      }, []);
 
     useEffect(async () => {
         // Get existing socket ID from sessionStorage, if available
