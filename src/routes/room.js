@@ -127,13 +127,7 @@ const Room = () => {
         // Get existing socket ID from sessionStorage, if available
         const existingSocketID = sessionStorage.getItem("socketID");
 
-        socketRef.current = io("https://robo-war-3f7f.vercel.app", {
-            reconnection: true,
-            reconnectionAttempts: 10,
-            reconnectionDelay: 1000,
-            reconnectionDelayMax: 5000,
-            auth: { socketID: existingSocketID } // Pass the existing socket ID as part of the auth options
-        });
+        socketRef.current = io("https://robo-war-3f7f.vercel.app");
 
         // Store the socket ID in sessionStorage when the connection is established
         socketRef.current.on("connect", () => {
