@@ -104,7 +104,7 @@ const Room = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get("https://robo-war-3f7f.vercel.app");
+            const response = await axios.get("https://robo-war-backend.onrender.com");
             setData(response.data);
             console.log(response.data)
           } catch (error) {
@@ -123,7 +123,7 @@ const Room = () => {
         // Get existing socket ID from sessionStorage, if available
         // const existingSocketID = sessionStorage.getItem("socketID");
 
-        socketRef.current = io("https://robo-war-3f7f.vercel.app");
+        socketRef.current = io("https://robo-war-backend.onrender.com");
 
         // Store the socket ID in sessionStorage when the connection is established
         socketRef.current.on("connect", () => {
